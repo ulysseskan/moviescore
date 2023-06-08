@@ -1,35 +1,43 @@
-### What it does do
-It returns the score of the film title you entered. Let say:
-```
-query = "Brice de Nice"
-```
-Output:
-```
-Could not find any matching result in Tomato search engine.
+## tl;dr
+Gets movie ratings from IMDb and RottenTomatoes for a given movie
 
-IMDb found the following: The Brice Man (2005), by James Huth with Jean Dujardin
+## About
+Fork of https://github.com/JulienPezet/get_movie_score
+- Uses latest available (sometimes unofficial) APIs as of June 2023
+- Conforms a bit better to python standards
 
-IMDB Score: 51
-This movie has no Rotten Tomatometer score yet.
-```
+< screenshot will be added once more of the improvements below are put in >
 
-This program uses two APIs: 
-  - IMDbPY (https://imdbpy.github.io);
-  - rotten_tomatoes_client (https://pypi.org/project/rotten_tomatoes_client/).
+## Getting Started
 
-requirements.txt comprises rotten_tomatoes_client and the needed packages for imdbpy.
+1. ```git clone https://github.com/ulysseskan/moviescore.git```
+2. ```cd moviescore```
+3. ```pip3 install -r requirements.txt```
+4. ```python3 main.py <movie query>```
 
-### Done
-  - Retrieve score, casting and director from IMDb
-  - Retrieve score, casting and director from Rotten Tomatoes
-      - Handle exceptions: no Tomatometer, no movie referenced, many movies found...
+### Prerequisites
 
-### To Do
-  - Propose choice within IMDb if proposed movie is incorrect;
-  - Retrieve Rotten Tomatoes Audience score;
-  - From a directory with a movie database, loop over all movies and check if more description is needed. For instance, I'd like on all my folders a name like that: Dont Look Up (2021) [1080p] RTm56 RTa77 IMDb73. If the score is not displayed, query the APIs to append the scores in folder name.
+You need a copy of Python 3.  I only tested with Python 3.10.  One way to install Python 3 is:
 
-#### Credits
-I came to this script with ideas from Zaki mini-scripts (https://gist.github.com/ZakiRangwala).
-Big thanks to IMDb for this amazing API, a lot to scrape still.
-Thanks to Jae Bradley for creating this not Rotten API.
+1. Install [Brew](https://brew.sh).
+2. ```brew install python3```
+3. Ensure Brew's executable bin directory is in your PATH variable, for example:<br>
+```echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile```
+
+## Potential improvements
+
+- [ ] Add RT audience score
+- [ ] Add Cinemascore
+- [ ] Add Letterboxd rating
+- [ ] Add various parents guide site scores (CommonSenseMedia age rating, Spotlight, MovieGuide, IMDb parental guide excerpt, etc. )
+- [ ] Add movie length
+- [ ] Colorize output (if score less than x, make red, etc.)
+- [ ] Prune requirements.txt
+
+## Bugs and Limitations
+
+- Does not currently show name of the movie Rotten Tomatoes is getting the score for.  This will be fixed shortly.
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.

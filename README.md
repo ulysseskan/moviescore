@@ -26,17 +26,20 @@ You need a copy of Python 3.  I only tested with Python 3.10.  One way to instal
 
 ## Potential improvements
 
-- [ ] Add RT audience score
-- [ ] Add Cinemascore
-- [ ] Add Letterboxd rating
-- [ ] Add various parents guide site scores (CommonSenseMedia age rating, Spotlight, MovieGuide, IMDb parental guide excerpt, etc. )
-- [ ] Add movie length
+- [x] Add RT audience score
+- [x] Add Cinemascore
+- [x] Add Letterboxd rating
+- [ ] Add various parents guide site scores (CommonSenseMedia age rating (done), Spotlight, MovieGuide, IMDb parental guide excerpt, etc. )
+- [x] Add movie length
+- [ ] Make it hostable on a (local) web server
 - [ ] Colorize output (if score less than x, make red, etc.)
+- [ ] Add prediction "you'll probably like it" if CinemaScore >= B, RottenTomatoes better than 55%+, MovieGuide better than -2, IMDb 6+, Letterboxd 3+ and vice versa
 - [ ] Prune requirements.txt
 
 ## Bugs and Limitations
 
-- Does not currently show name of the movie Rotten Tomatoes is getting the score for.  This will be fixed shortly.
+- Searching for interstellar does not return expected results
+- Searching for king kong 1933 does not return expected results
 
 ## License
 

@@ -2,6 +2,8 @@
 Aggregate movie ratings for a given movie
 
 ## About
+Works, but very much a work in progress.  (see bugs below)
+
 Fork of https://github.com/JulienPezet/get_movie_score
 - Uses latest available (sometimes unofficial) APIs as of June 2023
 - Conforms a bit better to python standards
@@ -40,6 +42,7 @@ You need a copy of Python 3.  I only tested with Python 3.10.  One way to instal
 
 - Searching for interstellar does not return expected results
 - Searching for king kong 1933 does not return expected results
+- Cinemascore results brittle, their site doesn't seem to like queries longer than 1 word
 
 ## License
 

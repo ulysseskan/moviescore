@@ -1,5 +1,5 @@
 ## tl;dr
-Aggregate movie ratings for a given movie
+Aggregate movie ratings for a given movie.
 
 ## About
 Works, but very much a work in progress.  (see bugs below)

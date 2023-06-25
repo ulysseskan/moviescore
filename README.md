@@ -1,5 +1,5 @@
 ## tl;dr
-Gets movie ratings from IMDb and RottenTomatoes for a given movie
+Aggregate movie ratings for a given movie
 
 ## About
 Fork of https://github.com/JulienPezet/get_movie_score

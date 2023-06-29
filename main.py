@@ -31,6 +31,8 @@ def print_movie_info(movie_info, matching_years):
             print(f"{movie_info['title']}, {movie_info['year']}")
         if 'rating' in movie_info:
             print(f"Rating: {movie_info['rating']}")
+        if 'one_liner' in movie_info:
+            print(f"{movie_info['one_liner']}")
         print()
 
 

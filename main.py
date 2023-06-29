@@ -47,7 +47,7 @@ def main():
     years = [result['year'] for result in [rt_result, lb_result, cs_result, csm_result] if result]
 
     # Check if there are 2 matching years among sources
-    if years and len(set(years)) >= 2:
+    if years and len(set(years)) >= 1:
         matching_year = max(set(years), key=years.count)  # Get the most common year
         # Filter years matching the most common year
         matching_years = [year for year in years if year == matching_year]
@@ -58,7 +58,7 @@ def main():
                 if result['year'] in matching_years:
                     print(f"{result['url']}parentalguide")
                     print(f"{result['title']}, {result['year']}")
-                    print(f"IMDb Score: {result['rating']}")
+                    print(f"Rating: {result['rating']}")
                     print()
 
         print_movie_info(rt_result, matching_years)

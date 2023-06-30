@@ -31,8 +31,9 @@ def search(query):
     spot_rating = movie_soup.select_one("div.infocoltwo")
     spot_rating = spot_rating.text.strip() if spot_rating else None
 
+    # Only return an empty string if no one liner is found
     one_liner = next((tag.text.strip() for tag in movie_soup.find_all("p") \
-                      if tag.text.startswith("Violence: ")), None)
+                      if tag.text.startswith("Violence: ")), "")
 
     if spot_rating is None:
         print("Spotlight rating not found.")

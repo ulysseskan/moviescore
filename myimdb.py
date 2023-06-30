@@ -15,7 +15,6 @@ def search(query):
 
     first_result = soup.select_one(".ipc-metadata-list-summary-item__tc")
     if first_result is None:
-        print("IMDb: Movie not found.")
         return []
 
     imdb_title = first_result.select_one(".ipc-metadata-list-summary-item__t").text.strip()

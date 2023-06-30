@@ -13,6 +13,7 @@ import myimdb as im
 import mytomatoes as rt
 import csm
 import myspotlight as spot
+import mymovieguide as mg
 
 # Check if the movie query name is provided as a command-line argument
 if len(sys.argv) < 2:
@@ -32,7 +33,7 @@ def print_movie_info(movie_info, matching_years):
             print(f"{movie_info['title']}, {movie_info['year']}")
         if 'rating' in movie_info:
             print(f"Rating: {movie_info['rating']}")
-        if 'one_liner' in movie_info:
+        if 'one_liner' in movie_info and movie_info['one_liner'] is not None:
             print(f"{movie_info['one_liner']}")
         print()
 
@@ -46,9 +47,11 @@ def main():
     lb_result = letterboxd.search(QUERY)
     csm_result = csm.search(QUERY)
     spot_result = spot.search(QUERY)
+    mg_result = mg.search(QUERY)
 
-    # Gather the years from rt, lb, cs, csm, and spot results
-    years = [result['year'] for result in [rt_result, lb_result, cs_result, csm_result, spot_result] if result]
+    # Gather the years from all results except imdb and mg (mg often doesn't have the year)
+    years = [result['year'] for result in [rt_result, lb_result, \
+                                           cs_result, csm_result, spot_result] if result]
 
     # Find most common year in list of years
     if years and len(set(years)) >= 1:
@@ -70,6 +73,14 @@ def main():
         print_movie_info(cs_result, matching_years)
         print_movie_info(csm_result, matching_years)
         print_movie_info(spot_result, matching_years)
+
+        # Copy most common year to mg_result
+        # such a horrid hack, but the year doesn't often exist in mg results
+        if mg_result:
+            mg_result['year'] = matching_year
+
+        # Always print mg_result if present
+        print_movie_info(mg_result, matching_years)
 
     else:
         print(f"DEBUG Years - RT: {rt_result['year'] if rt_result else 'N/A'},"

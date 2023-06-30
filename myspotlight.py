@@ -33,7 +33,7 @@ def search(query):
 
     # Only return an empty string if no one liner is found
     one_liner = next((tag.text.strip() for tag in movie_soup.find_all("p") \
-                      if tag.text.startswith("Violence: ")), "")
+                      if tag.text.startswith("Violence: ")), None)
 
     if spot_rating is None:
         print("Spotlight rating not found.")

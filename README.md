@@ -31,7 +31,7 @@ You need a copy of Python 3.  I only tested with Python 3.10.  One way to instal
 - [x] Add RT audience score
 - [x] Add Cinemascore
 - [x] Add Letterboxd rating
-- [ ] Add various parents guide site scores (CommonSenseMedia age rating (done), Spotlight, MovieGuide, IMDb parental guide excerpt, etc. )
+- [ ] Add various parents guide site scores (CommonSenseMedia age rating (done), Spotlight (done), MovieGuide, IMDb parental guide excerpt, etc. )
 - [x] Add movie length
 - [ ] Make it hostable on a (local) web server
 - [ ] Colorize output (if score less than x, make red, etc.)
@@ -41,6 +41,7 @@ You need a copy of Python 3.  I only tested with Python 3.10.  One way to instal
 ## Bugs and Limitations
 
 - Searching for king kong 1933 does not return expected results
+- Searching for movies that don't exist - output needs cleanup
 - Cinemascore results brittle, their site doesn't seem to like queries longer than 1 word
 
 ## License

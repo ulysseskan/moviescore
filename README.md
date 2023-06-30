@@ -28,7 +28,7 @@ You need a copy of Python 3.  I only tested with Python 3.10.  One way to instal
 
 ## Potential improvements
 
-- [x] Add RT audience score
+- [x] Add RT weighted score
 - [x] Add Cinemascore
 - [x] Add Letterboxd rating
 - [x] Add various parents guide site scores (CommonSenseMedia age rating (done), Spotlight (done), MovieGuide (done), IMDb parental guide excerpt (done))

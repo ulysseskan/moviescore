@@ -31,7 +31,7 @@ You need a copy of Python 3.  I only tested with Python 3.10.  One way to instal
 - [x] Add RT audience score
 - [x] Add Cinemascore
 - [x] Add Letterboxd rating
-- [ ] Add various parents guide site scores (CommonSenseMedia age rating (done), Spotlight (done), MovieGuide, IMDb parental guide excerpt, etc. )
+- [x] Add various parents guide site scores (CommonSenseMedia age rating (done), Spotlight (done), MovieGuide (done), IMDb parental guide excerpt (done))
 - [x] Add movie length
 - [ ] Make it hostable on a (local) web server
 - [ ] Colorize output (if score less than x, make red, etc.)

@@ -63,9 +63,10 @@ def main():
         if im_results:
             for result in im_results:
                 if result['year'] in matching_years:
-                    print(f"{result['url']}parentalguide")
+                    print(f"{result['url']}")
                     print(f"{result['title']}, {result['year']}")
                     print(f"Rating: {result['rating']}")
+                    print(f"Parent's Guide: {result['parentsguide']}")
                     print()
 
         print_movie_info(rt_result, matching_years)

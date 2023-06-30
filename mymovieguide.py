@@ -40,6 +40,9 @@ def search(query):
     if "year" not in mg_result:
         mg_result["year"] = '0000'
 
+    if "title" not in mg_result:
+        mg_result["title"] = None
+
     return mg_result
 
 # result = search("king kong")

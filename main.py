@@ -27,11 +27,11 @@ QUERY = " ".join(sys.argv[1:])
 def print_movie_info(movie_info, matching_years):
     """Print movie info if years match"""
     if movie_info and movie_info['year'] in matching_years:
-        if 'url' in movie_info:
+        if 'url' in movie_info and movie_info['url'] is not None:
             print(f"{movie_info['url']}")
         if movie_info['title'] is not None:
             print(f"{movie_info['title']}, {movie_info['year']}")
-        if 'rating' in movie_info:
+        if 'rating' in movie_info and movie_info['rating'] is not None:
             print(f"Rating: {movie_info['rating']}")
         if 'one_liner' in movie_info and movie_info['one_liner'] is not None:
             print(f"{movie_info['one_liner']}")

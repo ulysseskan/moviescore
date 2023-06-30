@@ -10,7 +10,6 @@ def search(query):
 
     first_result = soup.select_one("div.result_title > a")
     if not first_result:
-        print("Spotlight: Movie not found.")
         return {}
 
     try:

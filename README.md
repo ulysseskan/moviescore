@@ -41,7 +41,6 @@ You need a copy of Python 3.  I only tested with Python 3.10.  One way to instal
 ## Bugs and Limitations
 
 - Searching for king kong 1933 does not return expected results
-- Searching for movies that don't exist - output needs cleanup
 - Cinemascore results brittle, their site doesn't seem to like queries longer than 1 word
 
 ## License

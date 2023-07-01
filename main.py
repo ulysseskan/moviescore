@@ -45,7 +45,7 @@ def main():
     """Gather movie data"""
     # Variables to store title and scores
     rt_result = rt.search(QUERY)
-    im_results = im.search(QUERY)
+    im_result = im.search(QUERY)
     cs_result = mycinemascore.search(QUERY)
     lb_result = letterboxd.search(QUERY)
     csm_result = mycsm.search(QUERY)
@@ -64,8 +64,8 @@ def main():
         matching_years = [year for year in years if year == matching_year]
 
         # Print the results only if the years match
-        if im_results:
-            for result in im_results:
+        if im_result:
+            for result in im_result:
                 if result['year'] in matching_years:
                     print(f"{result['url']}")
                     print(f"{result['title']}, {result['year']}")

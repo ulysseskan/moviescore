@@ -20,7 +20,7 @@ def search(query):
             'year': rt_inner_year
         }
 
-    except rt.exceptions.LookupError:
+    except (rt.exceptions.LookupError, KeyError):
         return {
             'title': None,
             'url': None,

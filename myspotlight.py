@@ -34,9 +34,6 @@ def search(query):
     one_liner = next((tag.text.strip() for tag in movie_soup.find_all("p") \
                       if tag.text.startswith("Violence: ")), None)
 
-    if spot_rating is None:
-        print("Spotlight rating not found.")
-
     return {'title': spot_title, 'rating': spot_rating, 'year': year, \
              'url': spot_url, 'one_liner': one_liner}
 

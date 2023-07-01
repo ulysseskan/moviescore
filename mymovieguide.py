@@ -22,7 +22,9 @@ def search(query):
         movie_response = requests.get(review_url, timeout=10)
         movie_soup = BeautifulSoup(movie_response.text, "html.parser")
 
-        release_date_element = movie_soup.find('div', class_='cb-review-box').find('p').find('strong', text="Release Date: ").parent
+        release_date_element = \
+            movie_soup.find('div', class_='cb-review-box').find('p').find('strong', \
+                                                                    text="Release Date: ").parent
         if release_date_element:
             release_date_text = release_date_element.text.replace("Release Date: ", "").strip()
             release_date_list = release_date_text.split()

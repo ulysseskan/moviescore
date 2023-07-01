@@ -36,7 +36,7 @@ You need a copy of Python 3.  I only tested with Python 3.10.  One way to instal
 - [ ] Make it hostable on a (local) web server
 - [ ] Colorize output (if score less than x, make red, etc.)
 - [ ] Add prediction "you'll probably like it" if CinemaScore >= B, RottenTomatoes better than 55%+, MovieGuide better than -2, IMDb 6+, Letterboxd 3+ and vice versa
-- [ ] Add JustWatch results
+- [x] Add JustWatch results
 - [ ] Prune requirements.txt
 
 ## Bugs and Limitations

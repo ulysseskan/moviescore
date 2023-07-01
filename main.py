@@ -14,6 +14,7 @@ import mytomatoes as rt
 import csm
 import myspotlight as spot
 import mymovieguide as mg
+import myjustwatch as jw
 
 # Check if the movie query name is provided as a command-line argument
 if len(sys.argv) < 2:
@@ -35,6 +36,8 @@ def print_movie_info(movie_info, matching_years):
             print(f"Rating: {movie_info['rating']}")
         if 'one_liner' in movie_info and movie_info['one_liner'] is not None:
             print(f"{movie_info['one_liner']}")
+        if 'streaming_services' in movie_info and movie_info['streaming_services'] is not None:
+            print(f"{movie_info['streaming_services']}")
         print()
 
 
@@ -48,10 +51,11 @@ def main():
     csm_result = csm.search(QUERY)
     spot_result = spot.search(QUERY)
     mg_result = mg.search(QUERY)
+    jw_result = jw.search(QUERY)
 
     # Gather the years from all results except imdb and mg (mg often doesn't have the year)
     years = [result['year'] for result in [rt_result, lb_result, \
-                                           cs_result, csm_result, spot_result] if result]
+                                           cs_result, csm_result, spot_result, jw_result] if result]
 
     # Find most common year in list of years
     if years and len(set(years)) >= 1:
@@ -82,6 +86,9 @@ def main():
 
         # Always print mg_result if present
         print_movie_info(mg_result, matching_years)
+
+        # Print jw result last if years match
+        print_movie_info(jw_result, matching_years)
 
     else:
         print(f"DEBUG Years - RT: {rt_result['year'] if rt_result else 'N/A'},"

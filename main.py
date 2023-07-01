@@ -7,11 +7,11 @@ Modified by: Ulysses
 """
 import sys
 # import cProfile
-import cinemascore
+import mycinemascore
 import letterboxd
 import myimdb as im
-import mytomatoes as rt
-import csm
+import tomatoes as rt
+import mycsm
 import myspotlight as spot
 import mymovieguide as mg
 import myjustwatch as jw
@@ -46,9 +46,9 @@ def main():
     # Variables to store title and scores
     rt_result = rt.search(QUERY)
     im_results = im.search(QUERY)
-    cs_result = cinemascore.search(QUERY)
+    cs_result = mycinemascore.search(QUERY)
     lb_result = letterboxd.search(QUERY)
-    csm_result = csm.search(QUERY)
+    csm_result = mycsm.search(QUERY)
     spot_result = spot.search(QUERY)
     mg_result = mg.search(QUERY)
     jw_result = jw.search(QUERY)

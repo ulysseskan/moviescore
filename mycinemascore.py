@@ -10,7 +10,7 @@ import requests
 
 def search(query):
     """Search Cinemascore for a movie title"""
-    encoded_query = b64encode(query.encode('ascii')).decode('utf-8')
+    encoded_query = b64encode(query.encode('utf-8')).decode('utf-8')
     response = requests.get("https://webapp.cinemascore.com/guest/search/title/" + encoded_query, \
                             timeout=10).text
     data = json.loads(response)

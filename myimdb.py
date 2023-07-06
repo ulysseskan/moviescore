@@ -1,5 +1,6 @@
 """IMDb movie url + rating fetcher"""
 from urllib.parse import urlsplit, urlunsplit
+import re
 import requests
 from bs4 import BeautifulSoup
 
@@ -28,6 +29,12 @@ def search(query):
     soup2 = BeautifulSoup(response2.text, "html.parser")
 
     imdb_data['year'] = soup2.select_one("title").text.strip().split("(")[-1].split(")")[0]
+
+    imdb_data['poster'] = (
+        re.search(r'"image":"(https://m.media-amazon.com[^"]+)"', soup2.find("script", type="application/ld+json").text).group(1)
+        if soup2.find("script", type="application/ld+json") and re.search(r'"image":"(https://m.media-amazon.com[^"]+)"', soup2.find("script", type="application/ld+json").text)
+        else None
+    )
 
     imdb_rating = soup2.select_one("span.sc-bde20123-1.iZlgcd")
     imdb_data['rating'] = imdb_rating.text.strip() if imdb_rating else None
@@ -60,5 +67,5 @@ def search(query):
 
     return [imdb_data]
 
-# result = search("arrival")
-# print(result)
+result = search("arrival")
+print(result)

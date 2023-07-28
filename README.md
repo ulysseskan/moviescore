@@ -41,6 +41,8 @@ You need a copy of Python 3.  I only tested with Python 3.10.  One way to instal
 
 ## Bugs and Limitations
 
+- JustWatch results are currently not being returned due to the site switching to JavaScript generated results
+  (I have already fixed this locally by using Selenium.)
 - Searching for king kong 1933 does not return expected results
 - Cinemascore results brittle, their site doesn't seem to like queries longer than 1 word
 

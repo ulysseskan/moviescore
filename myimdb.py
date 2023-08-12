@@ -31,8 +31,11 @@ def search(query):
     imdb_data['year'] = soup2.select_one("title").text.strip().split("(")[-1].split(")")[0]
 
     imdb_data['poster'] = (
-        re.search(r'"image":"(https://m.media-amazon.com[^"]+)"', soup2.find("script", type="application/ld+json").text).group(1)
-        if soup2.find("script", type="application/ld+json") and re.search(r'"image":"(https://m.media-amazon.com[^"]+)"', soup2.find("script", type="application/ld+json").text)
+        re.search(r'"image":"(https://m.media-amazon.com[^"]+)"', \
+                  soup2.find("script", type="application/ld+json").text).group(1)
+        if soup2.find("script", type="application/ld+json") and \
+            re.search(r'"image":"(https://m.media-amazon.com[^"]+)"', \
+                      soup2.find("script", type="application/ld+json").text)
         else None
     )
 

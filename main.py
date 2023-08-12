@@ -21,6 +21,8 @@ if len(sys.argv) < 2:
     print("Usage: python3 main.py <movie_query>")
     sys.exit(1)
 
+print("Fetching data from up to 8 sites, this usually takes 8-12 seconds ...")
+
 # Extract the movie query from command-line arguments
 QUERY = " ".join(sys.argv[1:])
 

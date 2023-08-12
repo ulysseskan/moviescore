@@ -7,6 +7,9 @@ beautifulsoup4>=4.11.1
 #imdb:
 requests>=2.28.1
 
+#letterboxd
+lxml>=4.9.2
+
 #imdbpy:
 #atomicwrites>=1.1.5
 #attrs>=18.1.0

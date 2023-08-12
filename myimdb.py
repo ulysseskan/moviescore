@@ -67,5 +67,5 @@ def search(query):
 
     return [imdb_data]
 
-result = search("arrival")
-print(result)
+# result = search("arrival")
+# print(result)
